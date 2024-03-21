@@ -1,158 +1,169 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-    color: var(--text-color);
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
 }
 
 :root {
-    --text-color: #ffffff; /*Uma variável*/
-    --img: url(./assets/bg-desktop.jpg);
-    --stroke-color: rgba(255, 255, 255, 0.5);
-    --surface-color: rgba(255, 255, 255, 0.1);
-    --surface-color-hover: rgba(255, 255, 255, 0.05);
-    --highlight-color: rgba(255, 255, 255, 0.2);
-    --switch-icon: url(./assets/moon-stars.svg);
+  --text-color: #ffffff; /*Uma variável*/
+  --img: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-icon: url(./assets/moon-stars.svg);
 }
 
 .light {
-    --text-color: black;
-    --img: url(./assets/bg-desktop-light.jpg);
-    --stroke-color: rgba(0, 0, 0, 0.5);
-    --surface-color: rgba(0, 0, 0, 0.05);
-    --surface-color-hover: rgba(0, 0, 0, 0.02);
-    --highlight-color:rgba(0, 0, 0, 0.1);
-    --switch-icon: url(./assets/sun.svg);
+  --text-color: black;
+  --img: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-icon: url(./assets/sun.svg);
 }
 
 body {
-    background: var(--img);
+  background: var(--img) no-repeat top center/cover;
+  height: 100vh;
 }
 
 #container {
-    width: 100%;
-    max-width: 588px;
-    margin: 56px auto 0px;
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0;
 
-    padding: 0px 24px;
+  padding: 0 24px;
 }
 
 #profile {
-    text-align: center;
-    padding: 24px;
+  text-align: center;
+  padding: 24px;
 }
 
 #profile img {
-    width: 112px;
+  width: 112px;
 }
 
 #profile p {
-    font-weight: 500;
-    line-height: 24px;
-    margin: 8px;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 8px;
 }
 
 /*Switch*/
 
 #switch {
-    position: relative; /*o botão absoluto vai ser relativo a posição do switch*/
-    width: 64px;
-    margin: 4px auto; /*Alinhamento para quem tem display block.*/
+  position: relative; /*o botão absoluto vai ser relativo a posição do switch*/
+  width: 64px;
+  margin: 4px auto; /*Alinhamento para quem tem display block.*/
 }
 
 #switch button {
-    width: 32px;
-    height: 32px;
-    background: white var(--switch-icon) no-repeat center; /*alinhamento do background*/
-    border-radius: 50%;
-    border: 0;
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-icon) no-repeat center; /*alinhamento do background*/
+  border-radius: 50%;
+  border: 0;
 
-    position: absolute;/*sobrepõe outros itens.*/
-    top: 50%; /*Alinhamento de sobreposição absoluta no eixo y*/
-    left: 0;
-    z-index: 1; /*posição que sobrepõe os outros itens, que estão na posição 0*/
-    transform: translateY(-50%); /*Alinhamento de sobreposição absoluta no eixo y*/
+  position: absolute; /*sobrepõe outros itens.*/
+  top: 50%; /*Alinhamento de sobreposição absoluta no eixo y*/
+  left: 0;
+  z-index: 1; /*posição que sobrepõe os outros itens, que estão na posição 0*/
+  transform: translateY(
+    -50%
+  ); /*Alinhamento de sobreposição absoluta no eixo y*/
 }
 
 .light #switch button {
-    right: 0;
-    left: initial;
+  right: 0;
+  left: initial;
 }
 
 #switch span {
-    display: block;
-    width: 64px;
-    height: 24px;
-    background: var(--surface-color);
-    border: 1px solid var(--stroke-color);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 9999px;
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
 }
 
 /*Links ou listas*/
 ul {
-    list-style: none; /*Tira a bolinha da lista*/
+  list-style: none; /*Tira a bolinha da lista*/
 
-    display: flex;
-    flex-direction: column;
-    gap: 16px; /*Espaçamento dos botões*/
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /*Espaçamento dos botões*/
 
-    padding: 24px;
+  padding: 24px;
 }
 
 ul li a {
+  display: flex;
+  align-items: center; /*Centraliza horizontalmente na tela*/
+  justify-content: center; /*Centraliza verticalmente na tela*/
 
-    display: flex;
-    align-items: center; /*Centraliza horizontalmente na tela*/
-    justify-content: center; /*Centraliza verticalmente na tela*/
+  padding: 16px 24px; /*espaçamento do botão*/
 
-    padding: 16px 24px; /*espaçamento do botão*/
+  background: var(--surface-color); /*0.1 é a transparência*/
+  border: 1px solid var(--stroke-color); /*tudo 255 é branco*/
+  border-radius: 8px; /*Arredonda as bordas*/
+  backdrop-filter: blur(4px);
 
-    background: var(--surface-color); /*0.1 é a transparência*/
-    border: 1px solid var(--stroke-color); /*tudo 255 é branco*/
-    border-radius: 8px; /*Arredonda as bordas*/
-    backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
 
-    text-decoration: none;
-    font-weight: 500;
-
-    transition: background 0.4s;
+  transition: background 0.4s;
 }
 /*pseudo-selector*/
 ul li a:hover {
-    background: var(--surface-color-hover);
-    border: 1.5px solid var(--text-color);
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
 }
 
 #social-links {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    padding: 24px 0px;
+  padding: 24px 0px;
 
-    font-size: 24px;
+  font-size: 24px;
 }
 
 #social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
 
-    transition: 0.3s;
-    border-radius: 50%;
+  transition: 0.3s;
+  border-radius: 50%;
 }
 
-#social-links a:hover{
-    background: var(--highlight-color);
-    
+#social-links a:hover {
+  background: var(--highlight-color);
 }
 
 footer {
-    padding: 24px 0px;
-    text-align: center;
-    font-weight: 400;
-    font-size: 14px;
+  padding: 24px 0px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/*Media queries - Responsividade*/
+@media (min-width: 700px) {
+  :root {
+    --img: url(./assets/bg-desktop.jpg);
+  }
+  .light {
+    --img: url(./assets/bg-desktop-light.jpg);
+  }
 }
