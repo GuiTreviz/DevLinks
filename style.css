@@ -172,6 +172,12 @@ footer {
   }
   .light {
     --img: url(./assets/bg-desktop-light.jpg);
+    --text-color: black;
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-icon: url(./assets/sun.svg);
   }
 }
 
